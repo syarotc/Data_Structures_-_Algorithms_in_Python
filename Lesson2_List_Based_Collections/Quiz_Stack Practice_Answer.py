@@ -1,10 +1,10 @@
-class Element(object):
+class Element:
     def __init__(self, value):
         self.value = value
         self.next = None
 
 
-class LinkedList(object):
+class LinkedList:
     def __init__(self, head=None):
         self.head = head
 
@@ -31,7 +31,7 @@ class LinkedList(object):
             return None
 
 
-class Stack(object):
+class Stack:
     def __init__(self, top=None):
         self.ll = LinkedList(top)
 
@@ -40,3 +40,24 @@ class Stack(object):
 
     def pop(self):
         return self.ll.delete_first()
+
+
+# Test cases
+# Set up some Elements
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+e4 = Element(4)
+
+# Start setting up a Stack
+stack = Stack(e1)
+
+# Test stack functionality
+stack.push(e2)
+stack.push(e3)
+print(stack.pop().value)
+print(stack.pop().value)
+print(stack.pop().value)
+print(stack.pop())
+stack.push(e4)
+print(stack.pop().value)
